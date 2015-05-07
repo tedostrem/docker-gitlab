@@ -2,7 +2,9 @@
 ## For more details on configuring external_url see:
 ## https://gitlab.com/gitlab-org/omnibus-gitlab/blob/629def0a7a26e7c2326566f0758d4a27857b52a3/README.md#configuring-the-external-url-for-gitlab
 external_url 'http://192.168.59.103/'
-
+# If external url is on different port we have to explicitly tell
+# nginx to listen on port 80
+nginx['listen_port'] = 80
 
 ## Note: configuration settings below are optional.
 ## Uncomment and change the value.
